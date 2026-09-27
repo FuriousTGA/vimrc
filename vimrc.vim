@@ -153,38 +153,37 @@ colorscheme desert
 hi! def link    EndOfBuffer Normal
 
 " Background {
-highlight Normal             term=underline              ctermbg=233
-highlight CursorLine         term=underline              ctermbg=235
+highlight Normal             term=underline              ctermbg=NONE
+highlight CursorLine         term=underline              ctermbg=017
 " }
 
 " Line Numbers {
-highlight LineNr             term=underline ctermfg=024  ctermbg=233 
-highlight CursorLineNr       term=underline ctermfg=075  ctermbg=235   
+highlight LineNr             term=underline ctermfg=024  ctermbg=NONE
+highlight CursorLineNr       term=underline ctermfg=075  ctermbg=017
 " }
 
 " Status Bar {
-highlight StatusLine         term=underline ctermfg=051  ctermbg=027    
-highlight StatusLineTerm     term=underline ctermfg=051  ctermbg=027    
-highlight StatusLineNC       term=underline ctermfg=048  ctermbg=017   
-highlight StatusLineTermNC   term=underline ctermfg=048  ctermbg=017   
+highlight StatusLine         term=underline ctermfg=045  ctermbg=020    
+highlight StatusLineTerm     term=underline ctermfg=045  ctermbg=020    
+highlight StatusLineNC       term=underline ctermfg=030  ctermbg=018   
+highlight StatusLineTermNC   term=underline ctermfg=030  ctermbg=018   
 " }
 
 " Folds {
-highlight Folded             term=underline ctermfg=040  ctermbg=235  
-highlight FoldColumn         term=underline ctermfg=040  ctermbg=233  
+highlight Folded             term=underline ctermfg=040  ctermbg=017  
+highlight FoldColumn         term=underline ctermfg=040  ctermbg=NONE  
 " }
 
-
-
-
+" UI {
 highlight Visual             term=underline ctermfg=000  ctermbg=006   
 highlight NonText            term=underline ctermfg=015  ctermbg=000   
 highlight Todo               term=underline ctermfg=002  ctermbg=000     
+" }
 
 " plugin colors
 highlight IndentGuidesOdd                               ctermbg=243
 highlight IndentGuidesEven                              ctermbg=240
-highlight VemTablineSelected                            ctermbg=239
-highlight VemTablineNormal                              ctermbg=236
+highlight VemTablineSelected                ctermfg=045 ctermbg=020
+highlight VemTablineNormal                  ctermfg=030 ctermbg=019
 " }
 
