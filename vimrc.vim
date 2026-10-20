@@ -37,6 +37,9 @@ Plug 'nathanaelkane/vim-indent-guides'
 " mode. It also provides live preview for :substitute.
 Plug 'markonm/traces.vim'
 
+" The undo history visualizer for VIM
+Plug 'mbbill/undotree'
+
 call plug#end()
 " }
 
@@ -66,6 +69,7 @@ let g:vem_tabline_show = 2
 " options {
 set noexpandtab           " dont use spaces when [Tab] is inserted
 set relativenumber        " print the relative line number in front of each line
+set number                " print the line number in front of each line
 set autoindent            " take indent for new line from previous line
 set smartindent           " smart autoindenting for C programs
 set smarttab              " use shiftwidth when inserting [Tab]
@@ -92,6 +96,8 @@ inoremap <F12> <C-o>:SemanticHighlightToggle<CR>
 
 noremap  <F7> <Esc>:bp<CR>
 noremap  <F8> <Esc>:bn<CR>
+
+nnoremap <F5> :UndotreeToggle<CR>:UndotreeFocus<CR>
 
 
 " move selections
