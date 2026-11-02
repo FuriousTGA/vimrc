@@ -71,11 +71,9 @@ set showcmd               " show (partial) command in status line
 set ruler                 " show cursor line and column in the status line 
 set hlsearch              " highlight matches with last search pattern
 set list                  " show <Tab> and <EOL>
-set scrolloff=10          " minimal number of screen lines to keep above and below the cursor
-set foldclose=all         " close a fold when the cursor leaves it
 
 " characters for displaying in list mode
-set listchars=tab:»_,trail:·,precedes:<,extends:>
+set listchars=tab:¦\ ,trail:·,precedes:<,extends:>
 " }
 
 " keybinds {
@@ -146,39 +144,44 @@ augroup END
 " }
 
 " color scheme {
-colorscheme unokai
-hi! def link    EndOfBuffer Normal
+fun! SetColors()
+	hi! def link    EndOfBuffer Normal
 
-" Background {
-highlight Normal             term=underline              ctermbg=NONE
-highlight CursorLine         term=underline              ctermbg=017
+	" Background {
+	highlight Normal             term=underline              ctermbg=NONE
+	highlight CursorLine         term=underline              ctermbg=017
+	" }
+
+	" Line Numbers {
+	highlight LineNr             term=underline ctermfg=024  ctermbg=NONE
+	highlight CursorLineNr       term=underline ctermfg=075  ctermbg=017
+	" }
+
+	" Status Bar {
+	highlight StatusLine         term=underline ctermfg=045  ctermbg=020
+	highlight StatusLineTerm     term=underline ctermfg=045  ctermbg=020
+	highlight StatusLineNC       term=underline ctermfg=030  ctermbg=018
+	highlight StatusLineTermNC   term=underline ctermfg=030  ctermbg=018
+	" }
+
+	" Folds {
+	highlight Folded             term=underline ctermfg=040  ctermbg=017
+	highlight FoldColumn         term=underline ctermfg=040  ctermbg=NONE
+	" }
+
+	" UI {
+	highlight Visual             term=underline ctermfg=000  ctermbg=006
+	highlight NonText            term=underline ctermfg=015  ctermbg=000
+	highlight Todo               term=underline ctermfg=002  ctermbg=000
+	highlight SpecialKey         term=underline ctermfg=249  ctermbg=NONE
+	" }
+
+	" plugin colors {
+	highlight VemTablineSelected                ctermfg=045 ctermbg=020
+	highlight VemTablineNormal                  ctermfg=030 ctermbg=019
+	" }
+endfun
+
+colorscheme sorbet
+call SetColors()
 " }
-
-" Line Numbers {
-highlight LineNr             term=underline ctermfg=024  ctermbg=NONE
-highlight CursorLineNr       term=underline ctermfg=075  ctermbg=017
-" }
-
-" Status Bar {
-highlight StatusLine         term=underline ctermfg=045  ctermbg=020
-highlight StatusLineTerm     term=underline ctermfg=045  ctermbg=020
-highlight StatusLineNC       term=underline ctermfg=030  ctermbg=018
-highlight StatusLineTermNC   term=underline ctermfg=030  ctermbg=018
-" }
-
-" Folds {
-highlight Folded             term=underline ctermfg=040  ctermbg=017
-highlight FoldColumn         term=underline ctermfg=040  ctermbg=NONE
-" }
-
-" UI {
-highlight Visual             term=underline ctermfg=000  ctermbg=006
-highlight NonText            term=underline ctermfg=015  ctermbg=000
-highlight Todo               term=underline ctermfg=002  ctermbg=000
-" }
-
-" plugin colors
-highlight VemTablineSelected                ctermfg=045 ctermbg=020
-highlight VemTablineNormal                  ctermfg=030 ctermbg=019
-" }
-
