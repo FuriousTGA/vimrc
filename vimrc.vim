@@ -71,6 +71,8 @@ set showcmd               " show (partial) command in status line
 set ruler                 " show cursor line and column in the status line 
 set hlsearch              " highlight matches with last search pattern
 set list                  " show <Tab> and <EOL>
+set scrolloff=10          " minimal number of screen lines to keep above and below the cursor
+set foldclose=all         " close a fold when the cursor leaves it
 
 " characters for displaying in list mode
 set listchars=tab:¦\ ,trail:·,precedes:<,extends:>
